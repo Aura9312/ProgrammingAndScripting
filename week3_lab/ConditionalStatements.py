@@ -59,16 +59,25 @@ def testscorecalc():
     finally:
         pass
 
-try:
-    whatprogram = int(input("What program would you like to run? (1,2 or 3) "))
+mybool = True
+while mybool:
+    try:
+        whatprogram = int(input("What program would you like to run? (1,2 or 3) "))
 
-    if whatprogram == 1:
-        ticketcostcalculator()
-    elif whatprogram == 2:
-        rockpaperscissors()
-    elif whatprogram == 3:
-        testscorecalc()
-    else:
-        print("You did not input 1, 2 or 3.")
-except:
-    print("Please input 1, 2 or 3.")
+        if whatprogram == 1:
+            ticketcostcalculator()
+        elif whatprogram == 2:
+            rockpaperscissors()
+        elif whatprogram == 3:
+            testscorecalc()
+        else:
+            print("You did not input 1, 2 or 3.")
+    except:
+        print("Please input 1, 2 or 3.")
+    finally:
+        check = input("Would you like to continue? (Y/N) ")
+        if check == "N":
+            mybool = False
+        elif check != "Y" and check != "N":
+            print("You must input Y or N. Stopping program.")
+            mybool = False
